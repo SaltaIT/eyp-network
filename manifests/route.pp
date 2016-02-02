@@ -59,20 +59,20 @@ define network::route (
           notify  => $notify_exec,
         }
 
-        concat::fragment{ "route ${eth} header":
+        concat::fragment{ "route ${name} ${gw} ${network} header":
           target  => "/etc/network/if-up.d/z${order}-routes-${eth}",
           order   => '00',
           content => template("${module_name}/debian/ifupdown_header.erb"),
         }
 
-        concat::fragment{ "route ${eth} header":
+        concat::fragment{ "route ${name} ${gw} ${network} footer":
           target  => "/etc/network/if-up.d/z${order}-routes-${eth}",
           order   => '99',
           content => "fi\n",
         }
       }
 
-      concat::fragment{ "route ${name} ${gw} ${network}":
+      concat::fragment{ "route ${name} ${gw} ${network} content":
         target  => "/etc/network/if-up.d/z${order}-routes-${eth}",
         order   => $order,
         content => template("${module_name}/debian/ifup/ifup_content.erb"),
@@ -89,13 +89,13 @@ define network::route (
           notify  => $notify_exec,
         }
 
-        concat::fragment{ "route ${eth} header":
+        concat::fragment{ "route ${name} ${gw} ${network} header":
           target  => "/etc/network/if-down.d/z${order}-routes-${eth}",
           order   => '00',
           content => template("${module_name}/debian/ifupdown_header.erb"),
         }
 
-        concat::fragment{ "route ${eth} header":
+        concat::fragment{ "route ${name} ${gw} ${network} content":
           target  => "/etc/network/if-down.d/z${order}-routes-${eth}",
           order   => '99',
           content => "fi\n",
