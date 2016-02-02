@@ -10,7 +10,7 @@ class network::params {
         /^[5-7].*$/:
         {
         }
-        default: { fail("Unsupported RHEL/CentOS version! - $::operatingsystemrelease")  }
+        default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
     }
     'Debian':
@@ -25,7 +25,7 @@ class network::params {
             /^14.*$/:
             {
             }
-            default: { fail("Unsupported Ubuntu version! - $::operatingsystemrelease")  }
+            default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
         }
         'Debian': { fail('Unsupported')  }
