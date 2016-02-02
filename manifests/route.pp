@@ -95,7 +95,7 @@ define network::route (
           content => template("${module_name}/debian/ifupdown_header.erb"),
         }
 
-        concat::fragment{ "route ${name} ${gw} ${network} content ifdown":
+        concat::fragment{ "route ${name} ${gw} ${network} footer ifdown":
           target  => "/etc/network/if-down.d/z${order}-routes-${eth}",
           order   => '99',
           content => "fi\n",
