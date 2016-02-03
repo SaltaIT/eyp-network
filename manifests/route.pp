@@ -52,11 +52,11 @@ define network::route (
       if ! defined(Concat["/etc/network/if-up.d/z${order}-routes-${eth}"])
       {
         concat { "/etc/network/if-up.d/z${order}-routes-${eth}":
-          ensure  => $ensure,
-          mode    => '0755',
-          owner   => 'root',
-          group   => 'root',
-          notify  => $notify_exec,
+          ensure => $ensure,
+          mode   => '0755',
+          owner  => 'root',
+          group  => 'root',
+          notify => $notify_exec,
         }
 
         concat::fragment{ "route ${name} ${gw} ${network} header ifup":
@@ -82,11 +82,11 @@ define network::route (
       if ! defined(Concat["/etc/network/if-down.d/z${order}-routes-${eth}"])
       {
         concat { "/etc/network/if-down.d/z${order}-routes-${eth}":
-          ensure  => $ensure,
-          mode    => '0755',
-          owner   => 'root',
-          group   => 'root',
-          notify  => $notify_exec,
+          ensure => $ensure,
+          mode   => '0755',
+          owner  => 'root',
+          group  => 'root',
+          notify => $notify_exec,
         }
 
         concat::fragment{ "route ${name} ${gw} ${network} header ifdown":
