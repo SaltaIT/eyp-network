@@ -1,0 +1,14 @@
+DEVICE="<%= @dev %>"
+ONBOOT="<% if @onboot %>yes<% else %>no<% end %>"
+<% if @dhcp -%>
+BOOTPROTO=dhcp
+<% else -%>
+IPADDR=<%= @ip %>
+NETMASK=<%= @netmask %>
+<% if defined?(@gateway) %>GATEWAY=<%= @gateway %><% end %>
+<%- if defined?(@dns) -%>
+<%- @dnsto_enum.each_with_index do |v, i| -%>
+DNS<%= i %>=<%= v %>
+<%- end -%>
+<% end -%>
+<% end -%>
