@@ -1,13 +1,13 @@
 define network::interface (
-                            $dev=$name,
-                            $ip=undef,
-                            $netmask=undef,
-                            $gateway=undef,
-                            $dns=undef,
-                            $onboot=true,
-                            $dhcp=false,
-                            $preup=undef,
-                            $network_managed=true,
+                            $dev             = $name,
+                            $ip              = undef,
+                            $netmask         = undef,
+                            $gateway         = undef,
+                            $dns             = undef,
+                            $onboot          = true,
+                            $dhcp            = false,
+                            $preup           = undef,
+                            $network_managed = true,
                           ) {
   #
   include ::network
