@@ -9,9 +9,10 @@ BOOTPROTO=dhcp
 <% else -%>
 <% if defined?(@type) -%>
 TYPE="<%= @type %>"
-<% end -%>
+<% else -%>
 IPADDR=<%= @ip %>
 NETMASK=<%= @netmask %>
+<% end -%>
 <% if defined?(@peer_outer_ipaddr) -%>
 PEER_OUTER_IPADDR=<%= @peer_outer_ipaddr %>
 <% end -%>
