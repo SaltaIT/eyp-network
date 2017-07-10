@@ -24,6 +24,10 @@ define network::interface (
       fail('Inconsistent configuration')
     }
   }
+  elsif($type == 'gre')
+  {
+    # TODO: perform some checks
+  }
   else
   {
     if($ip==undef or $netmask==undef)
