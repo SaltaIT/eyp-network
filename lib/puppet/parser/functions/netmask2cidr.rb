@@ -1,11 +1,5 @@
 require 'ipaddr'
 
-IPAddr.class_eval
-  def to_cidr
-    self.to_i.to_s(2).count("1")
-  end
-end
-
 Puppet::Parser::Functions::newfunction(:netmask2cidr, :type => :rvalue, :doc => <<-EOS
 Transform netmask to CIDR notation
 EOS
@@ -14,6 +8,6 @@ EOS
 
   arg = args[0]
 
-  return IPAddr.new(arg).to_cidr
+  return IPAddr.new(arg).to_i.to_s(2).count("1")
 
 end
