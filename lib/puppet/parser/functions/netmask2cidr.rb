@@ -14,6 +14,6 @@ EOS
 
   arg = args[0]
 
-  IPAddr.new(arg).to_cidr
+  return IPAddr.new(arg).to_cidr
 
 end
