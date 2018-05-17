@@ -29,7 +29,7 @@ define network::interface (
     # TODO: perform some checks
     if($network::params::use_netplan)
     {
-      fail("GRE with netplan is currently unsupported")
+      fail('GRE with netplan is currently unsupported')
     }
   }
   else
@@ -43,7 +43,6 @@ define network::interface (
   if($network::params::use_netplan)
   {
     $netmask_cidr=netmask2cidr($netmask)
-    
     netplan::interface { $name:
       dev       => $dev,
       addresses => [ "${ip}/${netmask_cidr}" ],
