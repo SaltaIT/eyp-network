@@ -1,7 +1,7 @@
 {
   "name": "eyp-network",
   "version": "0.1.16",
-  "author": "eyp",
+  "author": "Jordi Prats",
   "summary": "netkork configuration module",
   "license": "Apache-2.0",
   "source": "https://github.com/SaltaIT/eyp-network",
