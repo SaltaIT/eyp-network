@@ -1,6 +1,6 @@
 # network
 
-**NTTCom-MS/eyp-network**: [![Build Status](https://travis-ci.org/NTTCom-MS/eyp-network.png?branch=master)](https://travis-ci.org/NTTCom-MS/eyp-network)
+**SaltaIT/eyp-network**: [![Build Status](https://travis-ci.org/SaltaIT/eyp-network.png?branch=master)](https://travis-ci.org/SaltaIT/eyp-network)
 
 #### Table of Contents
 
